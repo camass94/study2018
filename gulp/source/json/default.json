@@ -1,0 +1,11 @@
+{
+    "subject" : "Functional Programming in JAVASCRIPT",
+    "path" : "",
+    "name" : "csh",
+    "eachTest" : [
+        {"value":"A"},
+        {"value":"B"},
+        {"value":"C"},
+        {"value":"D"}
+    ]
+}
