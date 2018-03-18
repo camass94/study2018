@@ -36,7 +36,7 @@ gulp.task('clean', () => {
 
 gulp.task('js', () => {
     return gulp.src(`./${origin}/js/**/*.js`)
-        .pipe(newer(`./${origin}/js/**/*.js`))
+        .pipe(newer(`${origin}/js/*.js`))
         .pipe(jshint())
         .pipe(babel({
             presets: ['es2015']
