@@ -203,6 +203,7 @@ gulp.task('watch', () => {
     gulp.watch(`${origin}/js/**/*.js`, ['js']);
     gulp.watch(`${origin}/html/**/*.html`, ['html'])
     gulp.watch(`${origin}/sass/**/*.{scss,sass.css}`, ['css']);
+    gulp.watch(`${origin}/json/**/*.json`, ['html']);
 });
 
 gulp.task('default', ['html', 'css', 'js', 'images', 'sprite', 'iconfont']);
