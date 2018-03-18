@@ -17,6 +17,13 @@
     <% _.each(maps, function(map,idx) { %>
     <h2 class="page"><%= folderNames[idx] %> 목록</h1>
     <table class="table">
+        <colgroup> 
+            <col style="width:20%;">
+            <col style="width:20%;">
+            <col style="width:30%;">
+            <col style="width:10%;">
+            <col style="width:20%;">
+        </colgroup>
         <thead>
             <tr class="tr">
                 <th class="th"><span class="txt">타이틀</span></th>
@@ -29,7 +36,7 @@
         <tbody>
             <% _.each(map, function(m,index) { %>
             <tr class="tr">
-                <td class="td"><span class="txt"><%= m.title %> index : <%= index%></span></td>
+                <td class="td"><span class="txt"><%= m.title %></td>
                 <td class="td"><span class="txt left"><%= m.href %></span></td>
                 <td class="td"><a href="<%= m.href %>" class="txt" target="_blank"><%= m.name %></a></td>
                 <td class="td"><span class="txt"><%= m.author %></span></td>

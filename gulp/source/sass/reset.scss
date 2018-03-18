@@ -21,3 +21,27 @@ table {border-collapse: collapse;border-spacing: 0;}
 
 hr {display: block; height: 1px; border: 0; border-top: 1px solid #cccccc; margin: 1em 0; padding: 0;}
 input, select {vertical-align: middle;}
+
+
+td.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 5px;
+
+    /* your custom style here */
+}
+td.hljs-ln-code {
+    padding-left: 10px;
+}
+.hljs-ln td.hljs-ln-numbers {
+    padding:2px 7px 2px 3px;
+}

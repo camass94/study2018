@@ -140,7 +140,6 @@ gulp.task('html', () => {
                 const jsonFile = file.path.split(`${origin}\\html\\`)[1].split(ext)[0];
                 return JSON.parse(fs.readFileSync(`${origin}/json/${jsonFile}.json`));
             } catch(err){
-                console.log('no file');
                 return {}
             }
         }))
