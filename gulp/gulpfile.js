@@ -21,6 +21,7 @@ const gulp = require('gulp'),
     template = require('gulp-template'),
     sitemap = require('gulp-sitemap-generator'),
     fs = require('fs'),
+    path = require('path'),
     origin = "source",
     project = "build",
     prefix = "";
@@ -128,7 +129,17 @@ gulp.task('html', () => {
         }))
         .pipe(htmlhint('hint/.htmlhintrc'))
         .pipe(data((file)=>{
-            return JSON.parse(fs.readFileSync(`${origin}/json/default.json`));
+            return JSON.parse(fs.readFileSync(`${origin}/json/default.json`))
+        }))
+        .pipe(data((file)=>{
+            try {
+                const ext = path.extname(file.path);
+                const jsonFile = file.path.split(`${origin}\\html\\`)[1].split(ext)[0];
+                return JSON.parse(fs.readFileSync(`${origin}/json/${jsonFile}.json`));
+            } catch(err){
+                console.log('no file');
+                return {}
+            }
         }))
         .pipe(template())
         .pipe(gulp.dest(`${project}${prefix}`))

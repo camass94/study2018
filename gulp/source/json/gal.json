@@ -1,0 +1,11 @@
+{
+    "subject" : "Gal Functional Programming in JAVASCRIPT",
+    "galPath" : "Gal ",
+    "galName" : "Gal csh",
+    "galEachTest" : [
+        {"value":"Gal A"},
+        {"value":"Gal B"},
+        {"value":"Gal C"},
+        {"value":"Gal D"}
+    ]
+}

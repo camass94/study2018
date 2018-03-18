@@ -27,9 +27,9 @@
             </tr>
         </thead>
         <tbody>
-            <% _.each(map, function(m) { %>
+            <% _.each(map, function(m,index) { %>
             <tr class="tr">
-                <td class="td"><span class="txt"><%= m.title %></span></td>
+                <td class="td"><span class="txt"><%= m.title %> index : <%= index%></span></td>
                 <td class="td"><span class="txt left"><%= m.href %></span></td>
                 <td class="td"><a href="<%= m.href %>" class="txt" target="_blank"><%= m.name %></a></td>
                 <td class="td"><span class="txt"><%= m.author %></span></td>
