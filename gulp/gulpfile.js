@@ -1,4 +1,6 @@
 const gulp = require('gulp'),
+    gutil = require('gulp-util'),
+    plumber = require('gulp-plumber');
     sourcemaps = require('gulp-sourcemaps'),
     newer = require('gulp-newer'),
     fileinclude = require('gulp-file-include'),
@@ -38,6 +40,7 @@ gulp.task('clean', () => {
 gulp.task('js', () => {
     return gulp.src(`./${origin}/js/**/*.js`)
         .pipe(newer(`${origin}/js/*.js`))
+        .pipe(plumber({errorHandler : gutil.log}))
         .pipe(jshint())
         .pipe(babel({
             presets: ['es2015']
@@ -51,7 +54,7 @@ gulp.task('js', () => {
         //     ignoreFiles: ['-min.js']
         // }))
         .pipe(gulp.dest(`${project}${prefix}/js`))
-        .pipe(connect.reload());
+        .pipe(connect.reload())
 });
 
 gulp.task('images', () => {
@@ -197,7 +200,7 @@ gulp.task('watch', () => {
     gulp.watch(`${origin}/images/**/*.{gif,jpeg,jpg,png,svg}`, ['images'])
     gulp.watch(`${origin}/images/sprite/**/*.png`, ['sprite'])
     gulp.watch(`${origin}/images/svg/**/*.svg`, ['iconfont'])
-    gulp.watch(`${origin}/js/**/*.js`, ['js'])
+    gulp.watch(`${origin}/js/**/*.js`, ['js']);
     gulp.watch(`${origin}/html/**/*.html`, ['html'])
     gulp.watch(`${origin}/sass/**/*.{scss,sass.css}`, ['css']);
 });
